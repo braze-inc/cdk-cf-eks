@@ -78,6 +78,7 @@ class DominoEksClusterProvisioner:
             default_capacity=0,
             security_group=eks_sg,
             secrets_encryption_key=key,
+            service_ipv4_cidr="10.202.0.0/16",
             prune=False,  # https://github.com/aws/aws-cdk/issues/19843
         )
 

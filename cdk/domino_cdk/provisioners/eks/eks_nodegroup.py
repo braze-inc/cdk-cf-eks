@@ -234,7 +234,7 @@ class DominoEksNodegroupProvisioner:
                     extra_args.append(
                         "--register-with-taints={}".format(",".join(["{}={}".format(k, v) for k, v in taints.items()]))
                     )
-                options["bootstrap_options"] = eks.BootstrapOptions(kubelet_extra_args=" ".join(extra_args))
+                options["bootstrap_options"] = eks.BootstrapOptions(kubelet_extra_args=" ".join(extra_args), dns_cluster_ip="10.202.0.10")
 
             self.cluster.connect_auto_scaling_group_capacity(asg, **options)
 
